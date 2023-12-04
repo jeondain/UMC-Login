@@ -36,6 +36,8 @@ export default function Login() {
 
       if (res.data.isSuccess) {
         alert("로그인에 성공했습니다.");
+        localStorage.setItem('token', res.data.result.AccessToken); // 토큰 저장
+        localStorage.setItem('id', res.data.result.userId); // ID 저장
       }
 
       // 통신 완료 후 로딩 해제
